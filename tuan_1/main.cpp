@@ -39,7 +39,8 @@ int main() {
 
   cout << "\n#######################\n";
 
-  cout << "kiem tra so nguyen duong n co phai la so hoang thien hay khong" << endl;
+  cout << "kiem tra so nguyen duong n co phai la so hoang thien hay khong"
+       << endl;
   nhapSoNguyenDuong(b);
 
   if (kiemTraSoHoangThien(b) == true) {

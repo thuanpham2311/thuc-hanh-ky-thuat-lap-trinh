@@ -44,22 +44,22 @@ void xuatNSoNguyenToDauTien(int number) {
   int i = 2;
   cout << "Day so " << number << " so nguyen to dau tien: ";
   while (count != number | i > 100) {
-      if (kiemTraSoNguyenTo(i) == true) {
-        count++;
-        cout << "\n - [" << count << "]: " << i;
-      }
-      i++;
+    if (kiemTraSoNguyenTo(i) == true) {
+      count++;
+      cout << "\n - [" << count << "]: " << i;
+    }
+    i++;
   }
 }
 
 void xuatSoNguyenToBeHonBangN(int number) {
   int i = 2;
-  cout << "Day so nguyen to be ≤: " <<  number;
+  cout << "Day so nguyen to be ≤: " << number;
   while (i <= number || i > 100) {
-      if (kiemTraSoNguyenTo(i) == true) {
-        cout << "\n - " << i;
-      }
-      i++;
+    if (kiemTraSoNguyenTo(i) == true) {
+      cout << "\n - " << i;
+    }
+    i++;
   }
 }
 
