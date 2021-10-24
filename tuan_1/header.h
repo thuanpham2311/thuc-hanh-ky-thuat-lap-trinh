@@ -8,3 +8,4 @@ bool kiemTraSoNguyenTo(int number);
 void xuatNSoNguyenToDauTien(int number);
 void xuatSoNguyenToBeHonBangN(int number);
 bool kiemTraSoHoangThien(int number);
+int tongKySo(int number);

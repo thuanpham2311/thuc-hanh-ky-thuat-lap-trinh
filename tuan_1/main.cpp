@@ -1,7 +1,7 @@
 #include "header.h"
 
 int main() {
-  int x, y, z, a, b;
+  int x, y, z, a, b, c;
 
   cout << "\nkiểm tra n có phải là lũy thừa cơ số 2 hay không?" << endl;
 
@@ -48,6 +48,13 @@ int main() {
   } else {
     cout << "\n⇒ " << b << " không là so hoang thien \n";
   }
+
+  cout << "\n#######################\n";
+
+  nhapSoNguyenDuong(c);
+
+  cout << "Tổng các ký số của 1 số nguyên của " << c << " = " << tongKySo(c)
+       << endl;
 
   return 0;
 }

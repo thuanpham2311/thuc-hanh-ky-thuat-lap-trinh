@@ -81,3 +81,17 @@ bool kiemTraSoHoangThien(int number) {
 
   return flag;
 }
+
+int tongKySo(int number) {
+  int i = number;
+  int sum = 0;
+
+  if (i > 0) {
+    for (int j = 1; i > 0; j = j * 10) {
+      i = i / 10;
+      sum += (number / j) % 10;
+    }
+  }
+
+  return sum;
+}
