@@ -1,4 +1,4 @@
-#include "header_PhamTanThuan.h"
+#include "header.h"
 
 int main() {
   MaTranVuong a;
