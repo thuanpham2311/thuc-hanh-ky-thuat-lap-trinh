@@ -16,7 +16,7 @@ char* daoChuoi(char *a) {
   return b;
 }
 
-char* chenChuoi(char *a, char *b, int location) {
+char* chenChuoiStupid(char *a, char *b, int location) {
   char *c = new char[MAX + 1];
   int lenA = strlen(a) - 1;
   int lenB = strlen(b) - 1;
@@ -34,4 +34,53 @@ char* chenChuoi(char *a, char *b, int location) {
   }
 
   return c;
+}
+
+char* chenChuoi(char *a, char *b, int location) {
+  char *c = new char[MAX + 1];
+
+  strcpy(c, a + location);
+
+  a[location] = '\0';
+
+  strcat(a, b);
+  strcat(a, c);
+
+  return a;
+}
+
+char* chuyenChuHoa(char *a) {
+  char *b = new char[MAX + 1];
+
+  strcpy(b, a);
+
+  for (int i = 0; i < strlen(b); i++) {
+    if (b[i] >= 97 && b[i] <= 122) {
+      b[i] = b[i] - 32;
+    }
+  }
+
+  return b;
+}
+
+char* xoaNKyTuChuoiOViTriStupid(char *a, int num, int pos) {
+  char *b = new char[MAX + 1];
+
+  strcpy(b, a);
+
+  for (int i = 0; i < strlen(b) - num; i++) {
+    b[i + pos] = b[pos + num + i];
+    b--;
+  }
+
+  return b;
+}
+
+char* xoaNKyTuChuoiOViTri(char *a, int num, int pos) {
+  char *b = new char[MAX + 1];
+
+  strcpy(b, a + pos + num);
+
+  b[pos] = '\0';
+  return b;
 }
