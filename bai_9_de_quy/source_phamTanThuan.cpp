@@ -26,20 +26,23 @@ int xuatTongTangDan(int number) {
   }
 }
 
-// @todo why n = 4 -> s = 36 != 30
-// @body @thuanpham2311
 int xuatTongMu2TangDan(int number) {
-  if (number == 0) {
-    return 0;
-  } else {
-    return xuatTongTangDan(number - 1) * xuatTongTangDan(number - 1);
-  }
-}
-
-float xuatMau2muN(int number) {
+  // int sum = 0;
+  // for (int i = 1; i < number + 1; i++) {
+  // sum += pow(i, 2);
+  // }
+  // return sum;
   if (number == 1) {
     return 1;
   } else {
-    return 1.0 / 2 * xuatMau2muN(number - 1);
+    return pow(xuatTongTangDan(number - 1), 2);
   }
 }
+
+// int xuatMau2muN(int nubmer) {
+// if (number == 1) {
+// return 1;
+// } else {
+// return 1 / pow(2, xuatMau2muN(n));
+// }
+// }

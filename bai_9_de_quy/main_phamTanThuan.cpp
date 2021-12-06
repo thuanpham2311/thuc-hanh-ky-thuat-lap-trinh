@@ -41,13 +41,13 @@ int main() {
         cin >> NumberCase4;
         cout << "\n S = " << xuatTongMu2TangDan(NumberCase4) << endl;
         break;
-      case 5:
-        int NumberCase5;
-        // test 4: 1/2 + 1/4 + 1/6 + 1/8 = 1.041666667
-        cout << "\n Nhập n = ";
-        cin >> NumberCase5;
-        cout << "\n S = " << xuatMau2muN(NumberCase5) << endl;
-        break;
+        // case 5:
+        // int NumberCase5;
+        // // test 4: 1/2 + 1/4 + 1/6 + 1/8 = 1.041666667
+        // cout << "\n Nhập n = ";
+        // cin >> NumberCase5;
+        // cout << "\n S = " << xuatMau2muN(NumberCase5) << endl;
+        // break;
     }
   } while (menuNumber != 0);
 
