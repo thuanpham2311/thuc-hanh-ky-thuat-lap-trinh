@@ -10,7 +10,9 @@ int xuatPhanTuNfibonaci(int number);
 // 3. Tinh s=1+2+3+...+n
 int xuatTongTangDan(int number);
 // 4. tinh s= 1^2+2^2+3^2+...
-// 5. tinh s=1/2+1/4+...
+int xuatTongMu2TangDan(int number);
+// 5. tinh s=1/2+1/4+... 1/2*n
+float xuatMau2muN(int nubmer);
 // 6. tinh x^n
 // 7. tinh s=x+x^2+x^3+x^4+...
 // 8. Hay tinh tong cac chu so cua so nguyen duong n
