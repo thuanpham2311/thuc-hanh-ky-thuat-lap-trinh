@@ -11,7 +11,9 @@ int xuatGiaiThua(int number) {
 int xuatPhanTuNfibonaci(int number) {
   if (number == 0) {
     return 0;
-  } else if (number == 1 || number == 2) {
+  }
+
+  if (number == 1 || number == 2) {
     return 1;
   } else {
     return xuatPhanTuNfibonaci(number - 1) + xuatPhanTuNfibonaci(number - 2);

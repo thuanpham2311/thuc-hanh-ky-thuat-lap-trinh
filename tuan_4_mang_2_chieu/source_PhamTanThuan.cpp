@@ -177,7 +177,8 @@ bool kiemTranMaTranDonVi(MaTran a) {
       for (int j = 0; j < a.cot; j++) {
         if (i == j && a.maTran[i][j] == 1) {
           sum++;
-        } else if (a.maTran[i][j] == 0) {
+        }
+        if (a.maTran[i][j] == 0) {
           sum2++;
         }
       }
