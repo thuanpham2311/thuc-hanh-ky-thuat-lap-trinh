@@ -19,6 +19,15 @@ void nhapMaTranVuong(MaTranVuong &a) {
   }
 }
 
+void nhapMaTranVuong(int a[][], int n) {
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      cout << "[" << i << "][" << j << "]: ";
+      cin >> a[i][j];
+    }
+  }
+}
+
 void xuatMaTranVuong(MaTranVuong a) {
   for (int i = 0; i < a.n; i++) {
     for (int j = 0; j < a.n; j++) {
@@ -131,6 +140,18 @@ int xuatPhanTuLonNhatTamGiaTrenTrai(MaTranVuong a) {
     for (int j = 0; j < (a.n - i); j++) {
       if (a.list[i][j] > max) {
         max = a.list[i][j];
+      }
+    }
+  }
+  return max;
+}
+
+int soDuongLonNhat(MaTranVuong a) {
+  int max = a.mtv[0][0];
+  for (int i = 0; i < a.bac; i++) {
+    for (int j = 0; j < (a.bac - i); j++) {
+      if (a.mtv[i][j] > max) {
+        max = a.mtv[i][j];
       }
     }
   }

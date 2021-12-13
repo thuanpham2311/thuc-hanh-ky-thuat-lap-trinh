@@ -169,7 +169,6 @@ void thayTheXthanhY(DAYSO &array, int x, int y) {
   }
 }
 
-
 int diemPhanTuKhongTrungNhau(DAYSO array) {
   int count = 1;
   bool flag = false;
@@ -184,7 +183,7 @@ int diemPhanTuKhongTrungNhau(DAYSO array) {
       }
     }
     if (flag == false) {
-      count ++;
+      count++;
     }
   }
 
@@ -214,4 +213,3 @@ int xuatSoNguyenToCuoiCung(DAYSO array) {
 
   return soNguyenTo;
 }
-
