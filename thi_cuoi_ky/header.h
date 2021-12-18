@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <string>
 using namespace std;
 
 // BÀI TẬP CUỐI KỲ
@@ -28,6 +29,7 @@ bool kiemTraCoSoLapLaiTrongMaTran(Matrix matrix);
 int timGiaTriXuatHienNhieuNhat(Matrix matrix);
 // 3. Viết hàm cho phép chuẩn hóa chuỗi.(xóa khoảng trắng đầu và cuối chuỗi,
 // xóa những khoảng trắng dư thừa giữa các từ).
+string delUnnecessary(string &str);
 // 4. Viết chương trình thực hiện các yêu cầu sau:
 // a. Nhập mảng 1 chiều các vé xem phim (VE). Biết rằng một vé xem phim gồm
 // những thành phần sau: ·  Tên phim: chuỗi tối đa 20 ký tự ·  Giá vé: kiểu

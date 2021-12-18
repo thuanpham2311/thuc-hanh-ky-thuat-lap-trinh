@@ -8,6 +8,7 @@ int main() {
     cout << "1: tìm số nguyên tố lớn nhất trong mảng một chiều các số nguyên\n"
          << endl;
     cout << "2: Tìm giá trị xuất hiện nhiều nhất trong ma trận.\n" << endl;
+    cout << "3: chuẩn hóa chuỗi.\n" << endl;
     cout << "=> ? = ";
     cin >> menuNumber;
     switch (menuNumber) {
@@ -34,6 +35,13 @@ int main() {
           cout << "\n giá trị xuất hiện nhiều nhất trong mảng là: "
                << timGiaTriXuatHienNhieuNhat(matrix) << endl;
         }
+        break;
+      case 3:
+        cin.ignore();
+        string str;
+        getline(cin, str);
+        delUnnecessary(str);
+        cout << str;
         break;
     }
   } while (menuNumber != 0);

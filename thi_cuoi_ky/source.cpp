@@ -63,14 +63,20 @@ void nhapMaTran(Matrix &matrix) {
 }
 
 bool kiemTraCoSoLapLaiTrongMaTran(Matrix matrix) {
+  int count = 0;
   for (int i = 0; i < matrix.row; i++) {
     for (int j = 0; j < matrix.col; j++) {
-      for (int a = i + 1; a < matrix.row; a++) {
-        for (int b = j + 1; b < matrix.col; b++) {
+      for (int a = i; a < matrix.row; a++) {
+        for (int b = j; b < matrix.col; b++) {
           if (matrix.data[i][j] == matrix.data[a][b]) {
-            return true;
+            count++;
           }
         }
+      }
+      if (count >= 2) {
+        return true;
+      } else {
+        count = 0;
       }
     }
   }
@@ -83,19 +89,36 @@ int timGiaTriXuatHienNhieuNhat(Matrix matrix) {
   int repeat;
   for (int i = 0; i < matrix.row; i++) {
     for (int j = 0; j < matrix.col; j++) {
-      for (int a = i + 1; a < matrix.row; a++) {
-        for (int b = j + 1; b < matrix.col; b++) {
+      for (int a = i; a < matrix.row; a++) {
+        for (int b = j; b < matrix.col; b++) {
           if (matrix.data[i][j] == matrix.data[a][b]) {
             countTmp++;
           }
-          if (countTmp > count) {
-            repeat = matrix.data[i][j];
-            count = countTmp;
-          }
-          countTmp = 0;
         }
       }
+
+      if (countTmp > count) {
+        repeat = matrix.data[i][j];
+        count = countTmp;
+      }
+      countTmp = 0;
     }
   }
   return repeat;
+}
+
+string delUnnecessary(string &str) {
+  int size = str.length();
+  for (int j = 0; j <= size; j++) {
+    for (int i = 0; i <= j; i++) {
+      if (str[i] == ' ' && str[i + 1] == ' ') {
+        str.erase(str.begin() + i);
+      } else if (str[0] == ' ') {
+        str.erase(str.begin());
+      } else if (str[i] == '\0' && str[i - 1] == ' ') {
+        str.erase(str.end() - 1);
+      }
+    }
+  }
+  return str;
 }
