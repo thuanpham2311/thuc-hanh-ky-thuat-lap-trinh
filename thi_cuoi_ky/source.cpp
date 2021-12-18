@@ -107,15 +107,17 @@ int timGiaTriXuatHienNhieuNhat(Matrix matrix) {
   return repeat;
 }
 
-string delUnnecessary(string &str) {
+string chuanHoaChuoi(string &str) {
   int size = str.length();
   for (int j = 0; j <= size; j++) {
     for (int i = 0; i <= j; i++) {
       if (str[i] == ' ' && str[i + 1] == ' ') {
         str.erase(str.begin() + i);
-      } else if (str[0] == ' ') {
+      }
+      if (str[0] == ' ') {
         str.erase(str.begin());
-      } else if (str[i] == '\0' && str[i - 1] == ' ') {
+      }
+      if (str[i] == '\0' && str[i - 1] == ' ') {
         str.erase(str.end() - 1);
       }
     }

@@ -40,7 +40,7 @@ int main() {
         cin.ignore();
         string str;
         getline(cin, str);
-        delUnnecessary(str);
+        chuanHoaChuoi(str);
         cout << str;
         break;
     }
