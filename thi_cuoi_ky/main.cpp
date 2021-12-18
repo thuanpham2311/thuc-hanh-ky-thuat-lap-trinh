@@ -14,24 +14,26 @@ int main() {
       case 0:
         break;
       case 1:
-        int arrayLenght;
-        nhapDoDaiCuaMang(arrayLenght);
+        DaySo a;
+        nhapDaySo(a);
 
-        int array[arrayLenght];
-
-        nhapMang(array, arrayLenght);
-
-        if (xuatSoNguyenToLonNhat(array, arrayLenght) == -1) {
+        if (xuatSoNguyenToLonNhat(a) == -1) {
           cout << "\n mảng không có số nguyên tố" << endl;
         } else {
           cout << "\n Số nguyên tố lớn nhất trong mảng là: "
-               << xuatSoNguyenToLonNhat(array, arrayLenght) << endl;
+               << xuatSoNguyenToLonNhat(a) << endl;
         }
 
         break;
       case 2:
         Matrix matrix;
-
+        nhapMaTran(matrix);
+        if (kiemTraCoSoLapLaiTrongMaTran(matrix) == false) {
+          cout << "\n Không có giá trị lập lại\n";
+        } else {
+          cout << "\n giá trị xuất hiện nhiều nhất trong mảng là: "
+               << timGiaTriXuatHienNhieuNhat(matrix) << endl;
+        }
         break;
     }
   } while (menuNumber != 0);

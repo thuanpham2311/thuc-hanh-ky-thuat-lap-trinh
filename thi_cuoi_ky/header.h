@@ -5,20 +5,25 @@ using namespace std;
 // BÀI TẬP CUỐI KỲ
 // 1. Viết hàm tìm số nguyên tố lớn nhất trong mảng một chiều các số nguyên. Nếu
 // mảng không có số nguyên tố thì trả về giá trị -1.
-bool kiemTraSoNguyenTo(int number);
-int nhapSoNguyenDuong(int &n);
-void nhapDoDaiCuaMang(int &arrayLenght);
-void nhapMang(int array[], int arrayLenght);
-int xuatSoNguyenToLonNhat(int array[], int arrayLenght);
-// 2. Tìm giá trị xuất hiện nhiều nhất trong ma trận.
+
 const int MAX = 100;
+struct DaySo {
+  int list[MAX];
+  int n;
+};
+
+int nhapSoNguyenDuong(int &n);
+void nhapDaySo(DaySo &a);
+bool kiemTraSoNguyenTo(int number);
+int xuatSoNguyenToLonNhat(DaySo daySo);
+// 2. Tìm giá trị xuất hiện nhiều nhất trong ma trận.
 struct Matrix {
   int data[MAX][MAX];
   int row;
   int col;
 };
 
-void nhapMaTran(Matrix matrix);
+void nhapMaTran(Matrix &matrix);
 bool kiemTraCoSoLapLaiTrongMaTran(Matrix matrix);
 int timGiaTriXuatHienNhieuNhat(Matrix matrix);
 // 3. Viết hàm cho phép chuẩn hóa chuỗi.(xóa khoảng trắng đầu và cuối chuỗi,

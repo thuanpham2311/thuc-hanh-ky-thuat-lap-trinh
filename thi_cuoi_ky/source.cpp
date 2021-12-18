@@ -1,5 +1,22 @@
 #include "header.h"
 
+int nhapSoNguyenDuong(int &n) {
+  do {
+    cin >> n;
+  } while (n <= 0);
+
+  return n;
+}
+
+void nhapDaySo(DaySo &a) {
+  cout << "\nSố lượng phần tử của dẫy số: ";
+  nhapSoNguyenDuong(a.n);
+  for (int i = 0; i < a.n; i++) {
+    cout << "\n[" << i << "]: ";
+    cin >> a.list[i];
+  }
+}
+
 bool kiemTraSoNguyenTo(int number) {
   bool flag = false;
   int count = 0;
@@ -19,33 +36,12 @@ bool kiemTraSoNguyenTo(int number) {
   return flag;
 }
 
-int nhapSoNguyenDuong(int &n) {
-  do {
-    cin >> n;
-  } while (n <= 0);
-
-  return n;
-}
-
-void nhapDoDaiCuaMang(int &arrayLenght) {
-  arrayLenght = 0;
-  cout << "\nNhập độ dài của mảng một chiều: ";
-  nhapSoNguyenDuong(arrayLenght);
-}
-
-void nhapMang(int array[], int arrayLenght) {
-  for (int i = 0; i < arrayLenght; i++) {
-    cout << "array[" << i << "]: ";
-    cin >> array[i];
-  }
-}
-
-int xuatSoNguyenToLonNhat(int array[], int arrayLenght) {
+int xuatSoNguyenToLonNhat(DaySo a) {
   int max = -1;
 
-  for (int i = 0; i < arrayLenght; i++) {
-    if (kiemTraSoNguyenTo(array[i]) == true && array[i] > max) {
-      max = array[i];
+  for (int i = 0; i < a.n; i++) {
+    if (kiemTraSoNguyenTo(a.list[i]) == true && a.list[i] > max) {
+      max = a.list[i];
     }
   }
 
@@ -69,8 +65,8 @@ void nhapMaTran(Matrix &matrix) {
 bool kiemTraCoSoLapLaiTrongMaTran(Matrix matrix) {
   for (int i = 0; i < matrix.row; i++) {
     for (int j = 0; j < matrix.col; j++) {
-      for (int a = 0; a < matrix.row; a++) {
-        for (int b = 0; b < matrix.col; b++) {
+      for (int a = i + 1; a < matrix.row; a++) {
+        for (int b = j + 1; b < matrix.col; b++) {
           if (matrix.data[i][j] == matrix.data[a][b]) {
             return true;
           }
@@ -87,8 +83,8 @@ int timGiaTriXuatHienNhieuNhat(Matrix matrix) {
   int repeat;
   for (int i = 0; i < matrix.row; i++) {
     for (int j = 0; j < matrix.col; j++) {
-      for (int a = 0; a < matrix.row; a++) {
-        for (int b = 0; b < matrix.col; b++) {
+      for (int a = i + 1; a < matrix.row; a++) {
+        for (int b = j + 1; b < matrix.col; b++) {
           if (matrix.data[i][j] == matrix.data[a][b]) {
             countTmp++;
           }
