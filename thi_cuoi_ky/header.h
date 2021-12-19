@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <string>
 using namespace std;
 
 const int MAX = 20;
@@ -21,3 +22,5 @@ struct Matrix {
 
 void nhapMaTran(Matrix &a);
 int xuatGiaTriXuatHienNhieuNhatTrongMaTran(Matrix a);
+bool kiemTraCoGiaTriLapLaiTrongMaTran(Matrix x);
+void chuanHoaChuoi(string x);

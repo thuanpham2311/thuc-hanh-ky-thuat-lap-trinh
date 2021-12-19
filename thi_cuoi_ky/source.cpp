@@ -45,8 +45,60 @@ void nhapMaTran(Matrix &a) {
   }
 }
 
-int xuatGiaTriXuatHienNhieuNhatTrongMaTran(Matrix a) {
+int xuatGiaTriXuatHienNhieuNhatTrongMaTran(Matrix x) {
   int countTmp = 0;
   int count = 0;
   int top;
+  for (int i = 0; i < x.row; i++) {
+    for (int j = 0; j < x.col; j++) {
+      for (int a = i; a < x.row; a++) {
+        for (int b = j; b < x.col; b++) {
+          if (x.data[i][j] == x.data[a][b]) {
+            countTmp++;
+          }
+        }
+      }
+      if (countTmp > count) {
+        top = x.data[i][j];
+        count = countTmp;
+      }
+      countTmp = 0;
+    }
+  }
+  return top;
+}
+
+bool kiemTraCoGiaTriLapLaiTrongMaTran(Matrix x) {
+  int countTmp = 0;
+  int top;
+  for (int i = 0; i < x.row; i++) {
+    for (int j = 0; j < x.col; j++) {
+      for (int a = i; a < x.row; a++) {
+        for (int b = j; b < x.col; b++) {
+          if (x.data[i][j] == x.data[a][b]) {
+            countTmp++;
+          }
+        }
+      }
+      if (countTmp > 1) {
+        return true;
+      }
+      countTmp = 0;
+    }
+  }
+  return false;
+}
+
+void chuanHoaChuoi(string x) {
+  for (int i = 0; i < x.length(); i++) {
+    if (x[0] == ' ') {
+      x.erase(x.begin());
+    }
+    if (x[i] == ' ' && x[i + 1] == ' ') {
+      x.erase(x.begin() + i);
+    }
+    if (x[i] == '\0' && x[i - 1] == ' ') {
+      x.erase(x.begin() - 1);
+    }
+  }
 }
