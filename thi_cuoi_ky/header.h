@@ -70,3 +70,5 @@ int xuatTongGiaTienVe(Ve ve);
 // d. Tìm các phim có giá vé cao nhất
 void xuatCacPhimGiaVeCaoNhat(Ve ve);
 // e. Sắp xếp các phần tử trong mảng tăng dần theo ngày xem.
+void swap(int *x, int *y);
+void sapXep(Ve &ve);

@@ -8,12 +8,12 @@ int nhapSoNguyenDuong(int &n) {
   return n;
 }
 
-void nhapDaySo(DaySo &a) {
+void nhapDaySo(DaySo &ve) {
   cout << "\nSố lượng phần tử của dẫy số: ";
-  nhapSoNguyenDuong(a.n);
-  for (int i = 0; i < a.n; i++) {
+  nhapSoNguyenDuong(ve.n);
+  for (int i = 0; i < ve.n; i++) {
     cout << "\n[" << i << "]: ";
-    cin >> a.list[i];
+    cin >> ve.list[i];
   }
 }
 
@@ -36,12 +36,12 @@ bool kiemTraSoNguyenTo(int number) {
   return flag;
 }
 
-int xuatSoNguyenToLonNhat(DaySo a) {
+int xuatSoNguyenToLonNhat(DaySo ve) {
   int max = -1;
 
-  for (int i = 0; i < a.n; i++) {
-    if (kiemTraSoNguyenTo(a.list[i]) == true && a.list[i] > max) {
-      max = a.list[i];
+  for (int i = 0; i < ve.n; i++) {
+    if (kiemTraSoNguyenTo(ve.list[i]) == true && ve.list[i] > max) {
+      max = ve.list[i];
     }
   }
 
@@ -66,9 +66,9 @@ bool kiemTraCoSoLapLaiTrongMaTran(Matrix matrix) {
   int count = 0;
   for (int i = 0; i < matrix.row; i++) {
     for (int j = 0; j < matrix.col; j++) {
-      for (int a = i; a < matrix.row; a++) {
-        for (int b = j; b < matrix.col; b++) {
-          if (matrix.data[i][j] == matrix.data[a][b]) {
+      for (int ve = i; ve < matrix.row; ve++) {
+        for (int ve = j; ve < matrix.col; ve++) {
+          if (matrix.data[i][j] == matrix.data[ve][ve]) {
             count++;
           }
         }
@@ -89,9 +89,9 @@ int timGiaTriXuatHienNhieuNhat(Matrix matrix) {
   int repeat;
   for (int i = 0; i < matrix.row; i++) {
     for (int j = 0; j < matrix.col; j++) {
-      for (int a = i; a < matrix.row; a++) {
-        for (int b = j; b < matrix.col; b++) {
-          if (matrix.data[i][j] == matrix.data[a][b]) {
+      for (int ve = i; ve < matrix.row; ve++) {
+        for (int ve = j; ve < matrix.col; ve++) {
+          if (matrix.data[i][j] == matrix.data[ve][ve]) {
             countTmp++;
           }
         }
@@ -193,4 +193,33 @@ void xuatCacPhimGiaVeCaoNhat(Ve ve) {
            << ve.phim[i].ngay.thang << " năm " << ve.phim[i].ngay.nam << endl;
     }
   }
+}
+
+void swap(int *x, int *y) {
+  int tmp = *x;
+  *x = *y;
+  *y = tmp;
+}
+
+void sapXep(Ve &ve) {
+  for (int i = 0; i < ve.soLuongVe; i++)
+    for (int j = 0; j < ve.soLuongVe - i - 1; j++) {
+      if (ve.phim[j].ngay.nam != ve.phim[j + 1].ngay.nam) {
+        if (ve.phim[j].ngay.nam > ve.phim[j + 1].ngay.nam) {
+          swap(ve.phim[j], ve.phim[j + 1]);
+        }
+      }
+
+      if (ve.phim[j].ngay.thang != ve.phim[j + 1].ngay.thang) {
+        if (ve.phim[j].ngay.thang > ve.phim[j + 1].ngay.thang) {
+          swap(ve.phim[j], ve.phim[j + 1]);
+        }
+      }
+
+      if (ve.phim[j].ngay.ngay != ve.phim[j + 1].ngay.ngay) {
+        if (ve.phim[j].ngay.ngay > ve.phim[j + 1].ngay.ngay) {
+          swap(ve.phim[j], ve.phim[j + 1]);
+        }
+      }
+    }
 }
