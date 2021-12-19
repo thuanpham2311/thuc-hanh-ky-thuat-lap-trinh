@@ -9,6 +9,7 @@ int main() {
          << endl;
     cout << "2: Tìm giá trị xuất hiện nhiều nhất trong ma trận.\n" << endl;
     cout << "3: chuẩn hóa chuỗi.\n" << endl;
+    cout << "4: Vé xem phim\n" << endl;
     cout << "=> ? = ";
     cin >> menuNumber;
     switch (menuNumber) {
@@ -36,12 +37,18 @@ int main() {
                << timGiaTriXuatHienNhieuNhat(matrix) << endl;
         }
         break;
-      case 3:
+      case 3: {
         cin.ignore();
-        string str;
-        getline(cin, str);
-        chuanHoaChuoi(str);
-        cout << str;
+        string string;
+        getline(cin, string);
+        chuanHoaChuoi(string);
+        cout << string;
+      } break;
+      case 4:
+        Ve ve;
+        nhapVe(ve);
+        xuatVe(ve);
+        cout << "\n Tổng giá vé: " << xuatTongGiaTienVe(ve) << endl;
         break;
     }
   } while (menuNumber != 0);

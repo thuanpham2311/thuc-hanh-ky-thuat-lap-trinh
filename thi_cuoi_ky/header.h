@@ -8,6 +8,7 @@ using namespace std;
 // mảng không có số nguyên tố thì trả về giá trị -1.
 
 const int MAX = 100;
+
 struct DaySo {
   int list[MAX];
   int n;
@@ -32,8 +33,39 @@ int timGiaTriXuatHienNhieuNhat(Matrix matrix);
 string chuanHoaChuoi(string &str);
 // 4. Viết chương trình thực hiện các yêu cầu sau:
 // a. Nhập mảng 1 chiều các vé xem phim (VE). Biết rằng một vé xem phim gồm
-// những thành phần sau: ·  Tên phim: chuỗi tối đa 20 ký tự ·  Giá vé: kiểu
-// số thực ·  Xuất chiếu: kiểu thời gian (giờ, phút: kiểu nguyên) ·  Ngày
-// xem: kiểu ngày (ngày, tháng, năm: kiểu nguyên) b. Xuất mảng c. Tính tổng
-// giá tiền của tất cả các vé trong mảng d. Tìm các phim có giá vé cao nhất
+// những thành phần sau:
+// - Tên phim: chuỗi tối đa 20 ký tự
+// - Giá vé: kiểu số thực
+// - Xuất chiếu: kiểu thời gian (giờ, phút: kiểu nguyên)
+// - Ngày xem: kiểu ngày (ngày, tháng, năm: kiểu nguyên)
+
+struct ThoiGian {
+  int gio;
+  int phut;
+};
+
+struct Ngay {
+  int ngay;
+  int thang;
+  int nam;
+};
+
+struct Phim {
+  char tenPhim[20];
+  int giaVe;
+  ThoiGian thoiGian;
+  Ngay ngay;
+};
+
+struct Ve {
+  Phim phim;
+  int soLuongVe;
+};
+
+// b. Xuất mảng
+void nhapVe(Ve &ve);
+void xuatVe(Ve ve);
+// c. Tính tổng giá tiền của tất cả các vé trong mảng
+int xuatTongGiaTienVe(Ve ve);
+// d. Tìm các phim có giá vé cao nhất
 // e. Sắp xếp các phần tử trong mảng tăng dần theo ngày xem.

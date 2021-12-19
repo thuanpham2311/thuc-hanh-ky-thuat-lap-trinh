@@ -107,20 +107,67 @@ int timGiaTriXuatHienNhieuNhat(Matrix matrix) {
   return repeat;
 }
 
-string chuanHoaChuoi(string &str) {
-  int size = str.length();
-  for (int j = 0; j <= size; j++) {
-    for (int i = 0; i <= j; i++) {
-      if (str[i] == ' ' && str[i + 1] == ' ') {
-        str.erase(str.begin() + i);
+string chuanHoaChuoi(string &string) {
+  for (int i = 0; i <= string.length(); i++) {
+    for (int j = 0; j <= i; j++) {
+      if (string[0] == ' ') {
+        string.erase(string.begin());
       }
-      if (str[0] == ' ') {
-        str.erase(str.begin());
+      if (string[i] == ' ' && string[i + 1] == ' ') {
+        string.erase(string.begin() + i);
       }
-      if (str[i] == '\0' && str[i - 1] == ' ') {
-        str.erase(str.end() - 1);
+      if (string[i] == '\0' && string[i - 1] == ' ') {
+        string.erase(string.end() - 1);
       }
     }
   }
-  return str;
+  return string;
+}
+
+void nhapVe(Ve &ve) {
+  cout << "\n Số lượng vé bạn muốn nhập: ";
+  cin >> ve.soLuongVe;
+
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    cout << "\n Vé thứ " << i << endl;
+    cin.ignore();
+    cout << "tên phim: ";
+    cin.getline(ve.phim.tenPhim, 20);
+    cout << "giá Vé: ";
+    cin >> ve.phim.giaVe;
+    cout << "Thời gian: \n";
+    cout << "Giờ: ";
+    cin >> ve.phim.thoiGian.gio;
+    cout << "Phút: ";
+    cin >> ve.phim.thoiGian.phut;
+    cout << "Ngày: ";
+    cin >> ve.phim.ngay;
+    cout << "Tháng: ";
+    cin >> ve.phim.ngay.thang;
+    cout << "năm: ";
+    cin >> ve.phim.ngay.nam;
+  }
+}
+
+void xuatVe(Ve ve) {
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    cout << "\n Vé thứ " << i << endl;
+    cout << "tên phim: ";
+    cout << ve.phim.tenPhim << endl;
+    cout << "giá Vé: ";
+    cout << ve.phim.giaVe << endl;
+    cout << "Thời gian: ";
+    cout << ve.phim.thoiGian.gio << " giờ " << ve.phim.thoiGian.phut << " phút "
+         << endl;
+    cout << "Ngày: " << ve.phim.ngay << " tháng " << ve.phim.ngay.thang
+         << " năm " << ve.phim.ngay.nam << endl;
+  }
+}
+
+int xuatTongGiaTienVe(Ve ve) {
+  int sum = 0;
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    sum += ve.phim.giaVe;
+  }
+  return sum;
 }
