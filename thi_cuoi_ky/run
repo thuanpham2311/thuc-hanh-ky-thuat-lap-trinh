@@ -3,7 +3,7 @@
 echo "🚀 Executing..."
 g++ main.cpp source.cpp header.h
 echo ""
-./a.out < ./input
+./a.out
 echo ""
 echo "🧹 Clearing..."
 rm header.h.gch

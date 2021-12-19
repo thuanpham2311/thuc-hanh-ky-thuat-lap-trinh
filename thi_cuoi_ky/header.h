@@ -23,4 +23,30 @@ struct Matrix {
 void nhapMaTran(Matrix &a);
 int xuatGiaTriXuatHienNhieuNhatTrongMaTran(Matrix a);
 bool kiemTraCoGiaTriLapLaiTrongMaTran(Matrix x);
-void chuanHoaChuoi(string x);
+void chuanHoaChuoi(string &x);
+
+struct XuatChieu {
+  int gio;
+  int phut;
+};
+
+struct NgayXem {
+  int ngay;
+  int thang;
+  int nam;
+};
+
+struct Phim {
+  char tenPhim[100];
+  float giaVe;
+  XuatChieu xuatChieu;
+  NgayXem ngayXem;
+};
+
+struct Ve {
+  Phim phim[MAX];
+  int soLuongVe;
+};
+
+void nhapVe(Ve &ve);
+void xuatVe(Ve ve);
