@@ -168,8 +168,8 @@ void xuatCacPhimCoGiaVeCaoNhat(Ve ve) {
 }
 
 void sapXep(Ve &ve) {
-  for (int i = 0; i < ve.soLuongVe - 1; i++) {
-    for (int j = i; j < ve.soLuongVe - i - 1; j++) {
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    for (int j = 0; j < ve.soLuongVe - i - 1; j++) {
       if (ve.phim[i].ngayXem.nam > ve.phim[i + 1].ngayXem.nam) {
         swap(ve.phim[i], ve.phim[i + 1]);
       }
