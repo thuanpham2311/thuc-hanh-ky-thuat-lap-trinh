@@ -131,43 +131,66 @@ void nhapVe(Ve &ve) {
   for (int i = 0; i < ve.soLuongVe; i++) {
     cout << "\n Vé thứ " << i << endl;
     cin.ignore();
-    cout << "tên phim: ";
-    cin.getline(ve.phim.tenPhim, 20);
+    cout << "tên phim[i]: ";
+    cin.getline(ve.phim[i].tenPhim, 20);
     cout << "giá Vé: ";
-    cin >> ve.phim.giaVe;
+    cin >> ve.phim[i].gia;
     cout << "Thời gian: \n";
     cout << "Giờ: ";
-    cin >> ve.phim.thoiGian.gio;
+    cin >> ve.phim[i].thoiGian.gio;
     cout << "Phút: ";
-    cin >> ve.phim.thoiGian.phut;
+    cin >> ve.phim[i].thoiGian.phut;
     cout << "Ngày: ";
-    cin >> ve.phim.ngay;
+    cin >> ve.phim[i].ngay.ngay;
     cout << "Tháng: ";
-    cin >> ve.phim.ngay.thang;
+    cin >> ve.phim[i].ngay.thang;
     cout << "năm: ";
-    cin >> ve.phim.ngay.nam;
+    cin >> ve.phim[i].ngay.nam;
   }
 }
 
 void xuatVe(Ve ve) {
   for (int i = 0; i < ve.soLuongVe; i++) {
     cout << "\n Vé thứ " << i << endl;
-    cout << "tên phim: ";
-    cout << ve.phim.tenPhim << endl;
+    cout << "tên phim[i]: ";
+    cout << ve.phim[i].tenPhim << endl;
     cout << "giá Vé: ";
-    cout << ve.phim.giaVe << endl;
+    cout << ve.phim[i].gia << endl;
     cout << "Thời gian: ";
-    cout << ve.phim.thoiGian.gio << " giờ " << ve.phim.thoiGian.phut << " phút "
-         << endl;
-    cout << "Ngày: " << ve.phim.ngay << " tháng " << ve.phim.ngay.thang
-         << " năm " << ve.phim.ngay.nam << endl;
+    cout << ve.phim[i].thoiGian.gio << " giờ " << ve.phim[i].thoiGian.phut
+         << " phút " << endl;
+    cout << "Ngày: " << ve.phim[i].ngay.ngay << " tháng "
+         << ve.phim[i].ngay.thang << " năm " << ve.phim[i].ngay.nam << endl;
   }
 }
 
 int xuatTongGiaTienVe(Ve ve) {
   int sum = 0;
   for (int i = 0; i < ve.soLuongVe; i++) {
-    sum += ve.phim.giaVe;
+    sum += ve.phim[i].gia;
   }
   return sum;
+}
+
+void xuatCacPhimGiaVeCaoNhat(Ve ve) {
+  int max = ve.phim[0].gia;
+  for (int i = 1; i < ve.soLuongVe; i++) {
+    if (ve.phim[i].gia > max) {
+      max = ve.phim[i].gia;
+    }
+  }
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    if (ve.phim[i].gia == max) {
+      cout << "\n Vé thứ " << i << endl;
+      cout << "tên phim[i]: ";
+      cout << ve.phim[i].tenPhim << endl;
+      cout << "giá Vé: ";
+      cout << ve.phim[i].gia << endl;
+      cout << "Thời gian: ";
+      cout << ve.phim[i].thoiGian.gio << " giờ " << ve.phim[i].thoiGian.phut
+           << " phút " << endl;
+      cout << "Ngày: " << ve.phim[i].ngay.ngay << " tháng "
+           << ve.phim[i].ngay.thang << " năm " << ve.phim[i].ngay.nam << endl;
+    }
+  }
 }

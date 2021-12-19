@@ -52,13 +52,13 @@ struct Ngay {
 
 struct Phim {
   char tenPhim[20];
-  int giaVe;
+  int gia;
   ThoiGian thoiGian;
   Ngay ngay;
 };
 
 struct Ve {
-  Phim phim;
+  Phim phim[MAX];
   int soLuongVe;
 };
 
@@ -68,4 +68,5 @@ void xuatVe(Ve ve);
 // c. Tính tổng giá tiền của tất cả các vé trong mảng
 int xuatTongGiaTienVe(Ve ve);
 // d. Tìm các phim có giá vé cao nhất
+void xuatCacPhimGiaVeCaoNhat(Ve ve);
 // e. Sắp xếp các phần tử trong mảng tăng dần theo ngày xem.

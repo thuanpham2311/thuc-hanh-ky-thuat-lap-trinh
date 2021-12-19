@@ -49,6 +49,8 @@ int main() {
         nhapVe(ve);
         xuatVe(ve);
         cout << "\n Tổng giá vé: " << xuatTongGiaTienVe(ve) << endl;
+        cout << "\n các phim có giá vé cao nhất:" << endl;
+        xuatCacPhimGiaVeCaoNhat(ve);
         break;
     }
   } while (menuNumber != 0);
