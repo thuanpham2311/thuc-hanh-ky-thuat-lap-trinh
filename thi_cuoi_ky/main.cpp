@@ -53,6 +53,13 @@ int main() {
 
         xuatVe(ve);
 
+        cout << "\n tổng giá vé trong mảng là " << xuatTongGiaVe(ve) << endl;
+
+        cout << "\n xuất các phim có giá vé cao nhất" << endl;
+        xuatCacPhimCoGiaVeCaoNhat(ve);
+        sapXep(ve);
+        xuatVe(ve);
+
         break;
     }
   } while (menuNumber != 0);

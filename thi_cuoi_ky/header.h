@@ -37,7 +37,7 @@ struct NgayXem {
 };
 
 struct Phim {
-  char tenPhim[100];
+  char tenPhim[20];
   float giaVe;
   XuatChieu xuatChieu;
   NgayXem ngayXem;
@@ -50,3 +50,6 @@ struct Ve {
 
 void nhapVe(Ve &ve);
 void xuatVe(Ve ve);
+int xuatTongGiaVe(Ve ve);
+void xuatCacPhimCoGiaVeCaoNhat(Ve ve);
+void sapXep(Ve &ve);

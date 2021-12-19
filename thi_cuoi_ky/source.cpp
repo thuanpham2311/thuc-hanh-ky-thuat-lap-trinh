@@ -109,17 +109,18 @@ void nhapVe(Ve &ve) {
   cout << "\n Nhập số lượng vé: ";
   cin >> ve.soLuongVe;
   for (int i = 0; i < ve.soLuongVe; i++) {
+    cin.ignore();
     cout << "\n Vé thứ " << i << endl;
     cout << "Tên phim: ";
-    cin.getline(ve.phim[i].tenPhim, 100);
+    cin.getline(ve.phim[i].tenPhim, 20);
     cout << "Giá vé: ";
     cin >> ve.phim[i].giaVe;
-    cout << "Xuất chiếu: " << endl;
+    cout << "Xuất chiếu: \n";
     cout << "Giờ: ";
     cin >> ve.phim[i].xuatChieu.gio;
     cout << "Phút: ";
     cin >> ve.phim[i].xuatChieu.phut;
-    cout << "Ngày xem: " << endl;
+    cout << "Ngày xem: \n";
     cout << "ngày: ";
     cin >> ve.phim[i].ngayXem.ngay;
     cout << "tháng: ";
@@ -131,7 +132,7 @@ void nhapVe(Ve &ve) {
 
 void xuatVe(Ve ve) {
   for (int i = 0; i < ve.soLuongVe; i++) {
-    cout << "\n Vé thứ " << i << endl;
+    cout << "\nVé thứ " << i << endl;
     cout << "Tên phim: " << ve.phim[i].tenPhim << endl;
     cout << "Giá vé: " << ve.phim[i].giaVe << endl;
     cout << "Xuất chiếu: " << ve.phim[i].xuatChieu.gio << " giờ "
@@ -139,5 +140,45 @@ void xuatVe(Ve ve) {
     cout << "Ngày xem: ngày " << ve.phim[i].ngayXem.ngay << " tháng "
          << ve.phim[i].ngayXem.thang << " năm " << ve.phim[i].ngayXem.nam
          << endl;
+  }
+}
+
+int xuatTongGiaVe(Ve ve) {
+  int sum = 0;
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    sum += ve.phim[i].giaVe;
+  }
+  return sum;
+}
+
+void xuatCacPhimCoGiaVeCaoNhat(Ve ve) {
+  int max = 0;
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    if (ve.phim[i].giaVe > max) {
+      max = ve.phim[i].giaVe;
+    }
+  }
+  for (int i = 0; i < ve.soLuongVe; i++) {
+    if (ve.phim[i].giaVe == max) {
+      cout << "\nVé thứ " << i << endl;
+      cout << "Tên phim: " << ve.phim[i].tenPhim << endl;
+      cout << "Giá vé: " << ve.phim[i].giaVe << endl;
+    }
+  }
+}
+
+void sapXep(Ve &ve) {
+  for (int i = 0; i < ve.soLuongVe - 1; i++) {
+    for (int j = i; j < ve.soLuongVe - i - 1; j++) {
+      if (ve.phim[i].ngayXem.nam > ve.phim[i + 1].ngayXem.nam) {
+        swap(ve.phim[i], ve.phim[i + 1]);
+      }
+      if (ve.phim[i].ngayXem.thang > ve.phim[i + 1].ngayXem.thang) {
+        swap(ve.phim[i], ve.phim[i + 1]);
+      }
+      if (ve.phim[i].ngayXem.ngay > ve.phim[i + 1].ngayXem.ngay) {
+        swap(ve.phim[i], ve.phim[i + 1]);
+      }
+    }
   }
 }
