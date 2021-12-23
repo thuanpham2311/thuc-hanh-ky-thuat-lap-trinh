@@ -9,12 +9,12 @@ void nhapMang(Array &a) {
   }
 }
 
-bool kiemTraSoNguyenTo(int x) {
-  if (x < 2) {
+bool kiemTraSoNguyenTo(int y) {
+  if (y < 2) {
     return false;
   } else {
-    for (int i = 2; i < x / 2; i++) {
-      if (x % i == 0) {
+    for (int i = 2; i < y / 2; i++) {
+      if (y % i == 0) {
         return false;
       }
     }
